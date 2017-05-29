@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
        console.log( data );
@@ -69,13 +71,7 @@ app.get('/:id', function (req, res) {
    });
 });
 
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
-
-var server = app.listen(8081,"127.0.0.1", function () {
-
-  var host = server.address().address
-  var port = server.address().port
-
-  console.log("Example app listening at http://%s:%s", host, port)
-
-})
