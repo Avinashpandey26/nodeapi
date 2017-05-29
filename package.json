@@ -3,14 +3,14 @@
   "version": "0.1",
   "description": "A sample Node.js app using Express 4",
   "engines": {
-    "node": "6.10.2"
+    "node": "6.8.1"
   },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "4.15.2"
+    "express": "4.15.3"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "keywords": [
     "node",
-    "express"
+    "express",
+    "fs",
+    "body-parser"
   ],
   "license": "MIT"
 }
