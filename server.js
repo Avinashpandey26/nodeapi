@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 8081));
 
 app.get('/listUsers', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
@@ -71,7 +71,7 @@ app.get('/:id', function (req, res) {
    });
 });
 
-app.listen(8081,"https://ancient-stream-40105.herokuapp.com", function() {
+app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
